@@ -71,7 +71,17 @@ person1.greet=greet;
 
 person1.greet('Ugi','Do you want a cookie?')
 
+person1.greet2 = function(msg){
+console.log("Hello "+this.FirstName+', '+msg);
+}
 
+person1.greet2('are you well?');
 
+var SayIt = person1.greet2;
+var SayItSimple = person1.greet;
+SayIt.call(person1,' another message')
+
+SayItSimple();// this produces empty strings since invoked on null object
+SayItSimple(person1.FirstName,' evu zale?');
 
 console.log();console.log();console.log();console.log();console.log();
